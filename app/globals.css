@@ -47,3 +47,9 @@ footer{background:var(--ink);color:#fff;text-align:center;padding:56px 0;margin-
 .fform{border-top:1px solid #eee;margin-top:14px;padding-top:14px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}.split,.pd,.cartgrid{grid-template-columns:1fr;gap:28px}.split.rev>div:first-child{order:0}.hero{padding:90px 0}.card h3{font-size:16px}}
 @media(max-width:400px){.grid{grid-template-columns:1fr}.row{grid-template-columns:70px 1fr}.row img{width:70px;height:70px}.row strong{grid-column:2}}
+.footer-logo-image{
+  width:160px;
+  height:auto;
+  display:block;
+  margin:0 auto 12px;
+}
