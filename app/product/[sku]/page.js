@@ -1,5 +1,6 @@
 import {notFound} from 'next/navigation';import Link from 'next/link';import {db} from '@/lib/db';import {aed,stockText} from '@/lib/fmt';import AddToCart from '@/components/AddToCart';
 export const dynamic='force-dynamic';
+export const revalidate=0;
 export default async function Product({params}){
  const {data:p}=await db().from('products').select('*').eq('sku',params.sku).maybeSingle();if(!p)notFound();
  const out=p.stock<1;
