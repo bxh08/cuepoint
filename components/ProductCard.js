@@ -1,0 +1,2 @@
+import Link from 'next/link';import {aed,stockText} from '@/lib/fmt';
+export default function ProductCard({p}){return <Link href={`/product/${p.sku}`} className="card"><div className="im"><img src={p.image_url} alt={p.title} loading="lazy"/></div><div className="b"><h3>{p.title}</h3><p className="price">{aed(p.price)}</p><p className={'stock'+(p.stock<1?' out':'')}>{stockText(p.stock)}</p></div></Link>}
