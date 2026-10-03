@@ -1,7 +1,7 @@
 import Link from 'next/link';import {db} from '@/lib/db';import ProductCard from '@/components/ProductCard';
 export const dynamic='force-dynamic';
 export default async function Shop({searchParams}){
- export const revalidate=0;
+export const revalidate=0;
 export const fetchCache='force-no-store';
  const cat=searchParams.cat||'',sort=searchParams.sort||'';
  let q=db().from('products').select('*');if(cat)q=q.eq('category',cat);
