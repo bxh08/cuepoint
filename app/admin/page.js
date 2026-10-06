@@ -7,7 +7,7 @@ export default function Admin(){
  useEffect(()=>{load()},[]);
  const act=async b=>{const r=await post(b);if(r.error)alert(r.error);await load();return r};
  const login=async()=>{const r=await post({action:'login',password:pw});r.error?setErr(r.error):load()};
- if(auth===null)return <div className="wrap sec">Loading…</div>;
+ if(auth===null || (auth===true && !d))return <div className="wrap sec">Loading…</div>;
  if(!auth)return <div className="wrap sec narrow"><div className="box"><h1>Admin</h1><label>Password<input type="password" value={pw} onChange={e=>setPw(e.target.value)} onKeyDown={e=>e.key==='Enter'&&login()}/></label><button className="btn full" onClick={login}>Sign in</button>{err&&<p className="err">{err}</p>}</div></div>;
  const orders=d.orders.filter(o=>arch||!o.archived);
  return <div className="wrap sec"><div className="bar"><h1>Admin Dashboard</h1><button className="btn out dkb" onClick={()=>confirm('Reset demo? This sets Carbon Fiber Pro Cue stock back to 1 and archives orders containing it.')&&act({action:'reset'})}>Reset Demo</button></div>
